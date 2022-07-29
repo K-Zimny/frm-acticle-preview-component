@@ -85,17 +85,31 @@ select {
 /* ------------------------------- */
 
 :root {
-  --container-desktop: 1440px;
+  --container-desktop: 1000px;
   --container-mobile: 375px;
 
   --crl--primary: hsl(212, 23%, 69%);
   --crl--dark: hsl(217, 19%, 35%);
   --crl--light: hsl(210, 46%, 95%);
   --crl--desat: hsl(214, 17%, 51%);
+  --clr--white: hsl(0, 0%, 100%);
 
   --fs-400: 0.8125rem;
+  --fs-500: 1rem;
+
+  --fw-500: 500;
+  --fw-700: 700;
 
   --ff-sans-serif: "Manrope", sans-serif;
+
+  /* card */
+
+  --card-radius: 20px;
+
+  --content-padding-top: 2.5rem;
+  --content-padding-bottom: 2.5rem;
+  --content-padding-left: 2.5rem;
+  --content-padding-right: 2.5rem;
 }
 
 /* ------------------------------- */
@@ -133,4 +147,65 @@ select {
 }
 .bg-desat {
   background: var(--crl--desat);
+}
+.bg-white {
+  background: var(--clr--white);
+}
+
+/* typography */
+.ff-sans-serif {
+  font-family: var(--ff-sans-serif);
+}
+/* font size */
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+/* transforms */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* display */
+
+.flex {
+  display: flex;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+}
+
+/* ------------------------------- */
+/* Components */
+/* ------------------------------- */
+
+.card {
+  border-radius: var(--card-radius);
+}
+
+.card figure {
+  height: 100%;
+}
+
+.card img {
+  border-radius: var(--card-radius) 0 0 var(--card-radius);
+
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .content {
+  padding: var(--content-padding-top) var(--content-padding-right)
+    var(--content-padding-bottom) var(--content-padding-left);
 }
