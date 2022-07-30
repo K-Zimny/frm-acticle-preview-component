@@ -185,6 +185,12 @@ select {
   text-transform: uppercase;
 }
 
+/* spacing */
+
+.letter-spacing-large {
+  letter-spacing: 5px;
+}
+
 /* display */
 
 .flex {
@@ -250,6 +256,8 @@ select {
 }
 
 .card .share-btn {
+  position: relative;
+
   min-width: 50px;
   height: 50px;
 
@@ -273,4 +281,34 @@ select {
 .card .share-btn:hover svg,
 .card .share-btn:focus svg {
   fill: var(--crl--light);
+}
+
+/* Share hover block */
+
+.card .share {
+  position: absolute;
+  bottom: 5rem;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: max-content;
+
+  padding: 1.35rem 1rem;
+  border-radius: 15px;
+}
+
+.card .share::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: var(--crl--dark);
+  position: absolute;
+  transform: translate(-50%, 50%) rotate(45deg);
+  bottom: 0;
+  left: 50%;
+}
+
+.card .share > * {
+  padding: 0 1rem;
 }
