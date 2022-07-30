@@ -86,7 +86,7 @@ select {
 
 :root {
   --container-desktop: 1000px;
-  --container-mobile: 375px;
+  /* --container-mobile: 375px; */
 
   --crl--primary: hsl(212, 23%, 69%);
   --crl--dark: hsl(217, 19%, 35%);
@@ -111,6 +111,10 @@ select {
   --content-padding-bottom: 2.5rem;
   --content-padding-left: 3.5rem;
   --content-padding-right: 2.5rem;
+  --content-padding-top-mobile: 2.5rem;
+  --content-padding-bottom-mobile: 1.5rem;
+  --content-padding-left-mobile: 2.5rem;
+  --content-padding-right-mobile: 2.5rem;
 
   --avatar-margin-right: 1.5rem;
 }
@@ -126,7 +130,7 @@ select {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 /* text */
 .text-primary {
@@ -256,6 +260,8 @@ select {
 }
 
 .card .share-btn {
+  margin-left: 1rem;
+
   position: relative;
 
   min-width: 50px;
@@ -311,4 +317,55 @@ select {
 
 .card .share > * {
   padding: 0 1rem;
+}
+
+.card .share-mobile {
+  display: none;
+}
+
+/* ------------------------------- */
+/* Media Queries */
+/* ------------------------------- */
+
+@media (max-width: 1200px) {
+  .card .share {
+    transform: none;
+    left: unset;
+    right: 0;
+  }
+  .card .share::after {
+    left: unset;
+    right: 0;
+    transform: translate(-65%, 43%) rotate(45deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .card .image img {
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
+  }
+
+  .card .content {
+    padding: var(--content-padding-top-mobile)
+      var(--content-padding-right-mobile) var(--content-padding-bottom-mobile)
+      var(--content-padding-left-mobile);
+  }
+
+  .card .share {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    /* display: none; */
+    justify-content: unset;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .card .share::after {
+    display: none;
+  }
 }
