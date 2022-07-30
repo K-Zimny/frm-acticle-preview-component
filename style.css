@@ -332,6 +332,7 @@ select {
     transform: none;
     left: unset;
     right: 0;
+
   }
   .card .share::after {
     left: unset;
@@ -363,6 +364,8 @@ select {
     /* display: none; */
     justify-content: unset;
     border-radius: 0 0 15px 15px;
+
+    display: flex;
   }
 
   .card .share::after {
