@@ -96,6 +96,7 @@ select {
 
   --fs-400: 0.8125rem;
   --fs-500: 1rem;
+  --fs-900: 1.75rem;
 
   --fw-500: 500;
   --fw-700: 700;
@@ -108,8 +109,10 @@ select {
 
   --content-padding-top: 2.5rem;
   --content-padding-bottom: 2.5rem;
-  --content-padding-left: 2.5rem;
+  --content-padding-left: 3.5rem;
   --content-padding-right: 2.5rem;
+
+  --avatar-margin-right: 1.5rem;
 }
 
 /* ------------------------------- */
@@ -122,6 +125,9 @@ select {
   margin-inline: auto;
 }
 
+.hidden {
+  display: none;
+}
 /* text */
 .text-primary {
   color: var(--crl--primary);
@@ -163,6 +169,17 @@ select {
 .fs-500 {
   font-size: var(--fs-500);
 }
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fw-500 {
+  font-weight: var(--fw-500);
+}
+
+.fw-700 {
+  font-weight: var(--fw-700);
+}
 /* transforms */
 .uppercase {
   text-transform: uppercase;
@@ -182,6 +199,10 @@ select {
   align-items: center;
 }
 
+.flex-direction-column {
+  flex-direction: column;
+}
+
 .grid {
   display: grid;
 }
@@ -192,13 +213,14 @@ select {
 
 .card {
   border-radius: var(--card-radius);
+  filter: drop-shadow(2px 4px 17px hsl(214deg 17% 51% / 24%));
 }
 
 .card figure {
   height: 100%;
 }
 
-.card img {
+.card .image img {
   border-radius: var(--card-radius) 0 0 var(--card-radius);
 
   height: 100%;
@@ -208,4 +230,47 @@ select {
 .card .content {
   padding: var(--content-padding-top) var(--content-padding-right)
     var(--content-padding-bottom) var(--content-padding-left);
+}
+
+.card .title {
+  max-width: 27ch;
+  margin-bottom: 1.25rem;
+}
+
+.card .text {
+  max-width: 70ch;
+  margin-bottom: 1.5rem;
+}
+
+.card .avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: var(--avatar-margin-right);
+}
+
+.card .share-btn {
+  min-width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  border-width: 0;
+  background: var(--crl--light);
+
+  cursor: pointer;
+}
+
+.card .share-btn svg {
+  fill: var(--crl--desat);
+  width: 24px;
+}
+
+.card .share-btn:hover,
+.card .share-btn:focus {
+  background: var(--crl--desat);
+}
+
+.card .share-btn:hover svg,
+.card .share-btn:focus svg {
+  fill: var(--crl--light);
 }
